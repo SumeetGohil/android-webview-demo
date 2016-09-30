@@ -1,0 +1,108 @@
+.videos {
+	/*padding-top: 20px;*/
+	padding-bottom: 20px;
+	/*background: url('/assets/images/slices/profile/Pattern.png');*/
+}
+.main-body-wrapper {
+	background: url('/assets/images/slices/profile/Pattern.png');
+}
+.video-titles-mob {
+	display: none;
+}
+.video-titles-mob a {
+	text-align: center;
+  border-bottom: 2px solid;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  margin: 10px;
+  width: calc(50% - 20px);
+  float: left;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.video-container {
+	display: inline-block;
+	position: relative;
+}
+.video-container iframe {
+	position: absolute;
+	z-index: +2;
+}
+.video-container img, .video-slider img {
+	max-width: 100%;
+	display: block;
+}
+.video-slider .slide {
+	margin: 0px 20px;
+	display: block;
+	height: auto;
+	cursor: pointer;
+}
+.video-slider .slide p {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.video-slider {
+	width: 75%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 50px;
+}
+.slick-slider {
+	padding-top: 0px;
+}
+.video-slider .fa {
+	position: absolute;
+	top: 38%;
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	font-size: 28px;
+	width: 30px;
+	height: 30px;
+	background: #F8DD46;
+	color: #999999;
+	text-align: center;
+	border-radius: 100%;
+	cursor: pointer;
+}
+.video-slider .fa:hover {
+	color: #F8DD46;
+	background: #999999;
+}
+.video-slider .fa-angle-left { left: -35px; }
+.video-slider .fa-angle-right { right: -35px; }
+.videos .description {
+	width: 50%;
+	margin: 35px auto;
+	display: block;
+}
+.description p {
+	line-height: 30px;
+	text-align: center;
+	margin-top: 0px;
+}
+.video-container iframe { display: none; }
+
+@media all and (max-width: 480px) {
+	.videos .description {
+		width: 90%;
+	}
+	body {
+		font-size: 13px;
+	}
+}
+@media all and (max-width: 600px) {
+	.video-titles-mob {
+		display: block;
+	}
+}
+@media all and (max-width: 580px) {
+	.main-body-wrapper .videos {
+		padding-top: 100px !important;
+	}
+}

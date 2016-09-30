@@ -1,0 +1,211 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Direction Showreel | Sapan Verma</title>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="/assets/js/header.js"></script>
+		<script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
+		<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" type="image/png" xhref="/favicon.png"> -->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="/favicon.png"/>
+
+		<link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css">
+		<link rel="stylesheet" href="assets/css/college.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/slider.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/direction_showreel.css" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('nav .title').hover(function(){
+					$('nav .dropdown').show()
+				},function(){
+					$('nav .dropdown').hide()
+				})
+				$('nav .dropdown').hover(function(){
+					$('nav .dropdown').show()
+				},function(){
+					$('nav .dropdown').hide()
+				})
+				$('.video-slider').slick({
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					responsive: [
+						{
+							breakpoint: 960,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+					],
+					prevArrow: "<i class='fa fa-angle-left'></i>",
+					nextArrow: "<i class='fa fa-angle-right'></i>"
+				})
+				$('.video-container img').on('load', function(){
+					if($(window).width() < 768) {
+						var img_width = $('.video-container img.mobile').width()
+						var img_height = $('.video-container img.mobile').height()
+						var video_left_offset = Math.round(0.07900 * img_width)
+						var video_top_offset = Math.round(0.1669 * img_height)
+						var video_width = Math.round(0.8408 * img_width)
+						var video_height = Math.round(0.5748 * img_height)
+						$('.video-container iframe').css('left',video_left_offset + 'px')
+						$('.video-container iframe').css('top',video_top_offset + 'px')
+						$('.video-container iframe').css('width',video_width + 'px')
+						$('.video-container iframe').css('height',video_height + 'px')
+						$('.video-container iframe').show()
+					} else {
+						var img_width = $('.video-container img.desktop').width()
+						var img_height = $('.video-container img.desktop').height()
+						var video_left_offset = Math.round(0.2407 * img_width)
+						var video_top_offset = Math.round(0.1910 * img_height)
+						var video_width = Math.round(0.5538 * img_width)
+						var video_height = Math.round(0.5056 * img_height)
+						$('.video-container iframe').css('left',video_left_offset + 'px')
+						$('.video-container iframe').css('top',video_top_offset + 'px')
+						$('.video-container iframe').css('width',video_width + 'px')
+						$('.video-container iframe').css('height',video_height + 'px')
+						$('.video-container iframe').show()
+					}
+				})
+				$(window).resize(function(){
+					if($(window).width() < 768) {
+						var img_width = $('.video-container img.mobile').width()
+						var img_height = $('.video-container img.mobile').height()
+						var video_left_offset = Math.round(0.07900 * img_width)
+						var video_top_offset = Math.round(0.1669 * img_height)
+						var video_width = Math.round(0.8408 * img_width)
+						var video_height = Math.round(0.5748 * img_height)
+						$('.video-container iframe').css('left',video_left_offset + 'px')
+						$('.video-container iframe').css('top',video_top_offset + 'px')
+						$('.video-container iframe').css('width',video_width + 'px')
+						$('.video-container iframe').css('height',video_height + 'px')
+						$('.video-container iframe').show()
+					} else {
+						var img_width = $('.video-container img.desktop').width()
+						var img_height = $('.video-container img.desktop').height()
+						var video_left_offset = Math.round(0.2407 * img_width)
+						var video_top_offset = Math.round(0.1910 * img_height)
+						var video_width = Math.round(0.5538 * img_width)
+						var video_height = Math.round(0.5056 * img_height)
+						$('.video-container iframe').css('left',video_left_offset + 'px')
+						$('.video-container iframe').css('top',video_top_offset + 'px')
+						$('.video-container iframe').css('width',video_width + 'px')
+						$('.video-container iframe').css('height',video_height + 'px')
+						$('.video-container iframe').show()
+					}
+				})
+				$('.video-slider .slide').on('click', function() {
+					var src = $(this).data('video')
+					$('.video-container iframe').attr('src',src)
+				})
+				$(window).resize(function(){
+					if($(window).width() < 580) {
+						$(".video-titles-mob").after($(".description"))
+					} else {
+						var video_description = $('.main-body-wrapper > .description')
+						$('.videos').prepend(video_description)
+					}
+				})
+				if($(window).width() < 580) {
+					$(".video-titles-mob").after($(".description"))
+				} else {
+					var video_description = $('.main-body-wrapper > .description')
+					$('.videos').prepend(video_description)
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<div class="dim-cloak"></div>
+		<aside class="mobile-navbar">
+			<i class="fa fa-remove"></i>
+			<a href="/">Home</a>
+			<a href="/profile.html">Profile</a>
+			<a href="/videos.html">Videos</a>
+			<a href="/corporate.html">Corporate Shows</a>
+			<a href="/college.html">College Gigs</a>
+			<a href="/contact.php">Contact Me</a>
+		</aside>
+		<header>
+			<i class="fa fa-align-justify"></i>
+			<nav>
+				<div><a href="/" class="uppercase">Home</a></div>
+				<div><a href="/profile.html" class="uppercase">Profile</a></div>
+				<div class="uppercase" style="position:relative;">
+					<div class="title">Videos</div>
+					<div class="dropdown">
+						<a href="/videos.html">Standup Comedy</a>
+						<a href="/direction_showreel.html">direction <br /> Showreel</a>
+					</div>
+				</div>
+				<div><a href="/corporate.html" class="uppercase">Corporate Shows</a></div>
+				<div><a href="/college.html" class="uppercase">College Gigs</a></div>
+				<div><a href="/contact.php" class="uppercase">Contact Me</a></div>
+			</nav>
+			<section class="social-icons">
+				<a href="https://www.facebook.com/TheSapanVerma" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/sapanv" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.youtube.com/user/EastIndiaComedy" target="_blank"><i class="fa fa-youtube"></i></a>
+				<a href="https://instagram.com/sapanv/" target="_blank"><i class="fa fa-instagram"></i></a>
+			</section>
+		</header>
+		<div class="main-body-wrapper">
+			<div class='row video-titles-mob'>
+				<a href='/videos.html'>Standup Comedy</a>
+				<a href='/direction_showreel.html'>Direction Showreel</a>
+			</div>
+			<section class='video-container'>
+				<img src="/assets/images/slices/video/Video_1.png" class="desktop banner" />
+				<img src="/assets/images/slices/video/video_mob_1.png" class="mobile banner" />
+				<iframe width="420" height="315" src="https://www.youtube.com/embed/EiIxkOah09E?list=PLox1kfMm75BzudybFwp35p6xIxvV8B1LU" frameborder="0" allowfullscreen></iframe>
+			</section>
+			<div class="videos">
+				<div class='description'>
+					<p>Pretty much all the sketches and music videos that you see on the East India Comedy YouTube channel are directed and co-written by me.</p>
+				</div>
+				<div class="video-slider">
+					<div class='slide' data-video="https://www.youtube.com/embed/EiIxkOah09E?list=PLox1kfMm75BzudybFwp35p6xIxvV8B1LU">
+						<img src="http://img.youtube.com/vi/EiIxkOah09E/0.jpg" />
+						<p>Sex Education in India</p>
+					</div>
+					<div class='slide' data-video="https://www.youtube.com/embed/PxoSPucPKrY?list=PLox1kfMm75Bx6ANCgCRexgTokYB-Z7CPr">
+						<img src="http://img.youtube.com/vi/PxoSPucPKrY/0.jpg" />
+						<p>Wrecking God</p>
+					</div>
+					<div class='slide' data-video="https://www.youtube.com/embed/dS2lLiSsoyM?list=PLox1kfMm75BzudybFwp35p6xIxvV8B1LU">
+						<img src="http://img.youtube.com/vi/dS2lLiSsoyM/0.jpg" />
+						<p>Education Then Vs Now</p>
+					</div>
+					<div class='slide' data-video="https://www.youtube.com/embed/lIsIOsXkID4?list=PLox1kfMm75Bx6ANCgCRexgTokYB-Z7CPr">
+						<img src="http://img.youtube.com/vi/lIsIOsXkID4/0.jpg" />
+						<p>Ultimate Shaadi Playlist</p>
+					</div>
+					<div class='slide' data-video="https://www.youtube.com/embed/bdPqGLB18js?list=PLox1kfMm75BzudybFwp35p6xIxvV8B1LU">
+						<img src="http://img.youtube.com/vi/bdPqGLB18js/0.jpg" />
+						<p>I'm Not A Woman</p>
+					</div>
+					<div class='slide' data-video="https://www.youtube.com/embed/21ZtFxp6h54">
+						<img src="http://img.youtube.com/vi/21ZtFxp6h54/0.jpg" />
+						<p>Ban-Ban</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="credit"><a href="https://www.facebook.com/middleofsomething" target="_blank">Design: Saakshi Vyas</a></div>
+			<div class="copyright">2015 Sapan Verma</div>
+			<div class="to-top"><a href="#">Back to top<i class="fa fa-arrow-up"></i></a></div>
+		</footer>
+	</body>
+</html>
